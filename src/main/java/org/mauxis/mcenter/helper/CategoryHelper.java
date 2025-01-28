@@ -29,4 +29,34 @@ public class CategoryHelper {
         }
     }
 
+    public void replace(CategoryCreateRequestVO request) throws Exception{
+
+        List<Category> results = categoryDAO.findByName(request.getName());
+        if (!results.isEmpty()){
+            throw new Exception("Esta categoria ya existe");
+        }else{
+            categoryDAO.save(new Category(request.getName()));
+        }
+    }
+
+    public void update(CategoryCreateRequestVO request) throws Exception{
+
+        List<Category> results = categoryDAO.findByName(request.getName());
+        if (!results.isEmpty()){
+            throw new Exception("Esta categoria ya existe");
+        }else{
+            categoryDAO.save(new Category(request.getName()));
+        }
+    }
+
+    public void delete(CategoryCreateRequestVO request) throws Exception{
+
+        List<Category> results = categoryDAO.findByName(request.getName());
+        if (!results.isEmpty()){
+            throw new Exception("Esta categoria ya existe");
+        }else{
+            categoryDAO.save(new Category(request.getName()));
+        }
+    }
+
 }
